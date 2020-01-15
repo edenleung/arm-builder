@@ -26,5 +26,6 @@ script:
   - docker buildx create --use --name mybuilder
   - docker buildx ls
   - echo "1255900858ecw.." | docker login -u "xiaodi93" --password-stdin
-  - docker buildx build -t xiaodi93/ant-design2 --platform=linux/amd64 . --push
+  - docker buildx build -t xiaodi93/ant-design:amd64 --platform=linux/amd64 . --push
+  - docker buildx build -t xiaodi93/ant-design:latest --platform=linux/arm64 . --push
   
