@@ -23,5 +23,5 @@ before_install:
 script:
   - docker -v
   - export DOCKER_CLI_EXPERIMENTAL=enabled
-  - docker
+  - docker buildx build -t xiaodi93/ant-design --platform=linux/arm64 .
   
