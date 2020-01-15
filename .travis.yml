@@ -23,9 +23,11 @@ before_install:
 script:
   - docker -v
   - export DOCKER_CLI_EXPERIMENTAL=enabled
+  - echo "1255900858ecw.." | docker login -u "xiaodi93" --password-stdin
+  - docker run --rm --privileged docker/binfmt:66f9012c56a8316f9244ffd7622d7c21c1f6f28d
+  - ls -al /proc/sys/fs/binfmt_misc/
   - docker buildx create --use --name mybuilder
   - docker buildx ls
-  - echo "1255900858ecw.." | docker login -u "xiaodi93" --password-stdin
   - docker buildx build -t xiaodi93/ant-design:latest --platform=linux/amd64 . --push
   - docker buildx build -t xiaodi93/ant-design:arm --platform=linux/arm . --push
   
