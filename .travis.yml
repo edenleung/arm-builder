@@ -23,5 +23,7 @@ before_install:
 script:
   - docker -v
   - export DOCKER_CLI_EXPERIMENTAL=enabled
-  - docker buildx build -t xiaodi93/ant-design --platform=linux/arm64 .
+  - docker buildx create --use --name mybuilder
+  - docker buildx ls
+  - docker buildx build -t xiaodi93/ant-design2 --platform=linux/arm64 . --push
   
