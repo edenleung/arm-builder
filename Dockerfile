@@ -3,7 +3,7 @@ ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM" > /log
 
-FROM nginx:1.17.7-alpine
+FROM xiaodi93/dcnmp-php71
 
 ARG TZ="Asia/Shanghai"
 ENV TZ ${TZ}
@@ -14,6 +14,8 @@ RUN apk upgrade --update \
     && echo ${TZ} > /etc/timezone \
     && rm -rf /var/cache/apk/*
 
-COPY dist/ /usr/share/nginx/html/
+COPY ./ /var/www/html/
 
-CMD ["nginx", "-g", "daemon off;"]
+WORKDIR /var/www/html/
+
+CMD ["/bin/php", "think run"]
