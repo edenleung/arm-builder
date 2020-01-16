@@ -18,4 +18,4 @@ COPY ./ /var/www/html/
 
 WORKDIR /var/www/html/
 
-CMD ["/bin/php", "think run"]
+CMD ["/bin", "php think run"]
