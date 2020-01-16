@@ -15,5 +15,3 @@ RUN apk upgrade --update \
     && rm -rf /var/cache/apk/*
 
 COPY ./ /var/www/html/
-
-WORKDIR /var/www/html/
