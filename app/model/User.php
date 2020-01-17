@@ -247,7 +247,7 @@ class User extends \think\Model implements UserContract
      *
      * @return array
      */
-    public function getDataAccess($table)
+    public function getDataAccess()
     {
         $deptsIds = [];
 
