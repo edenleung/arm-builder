@@ -30,6 +30,7 @@ before_deploy:
   - ls -al /proc/sys/fs/binfmt_misc/
   - docker buildx create --use --name mybuilder
   - cp .env.example .env
+  - chmod -R 777 runtime
   - docker buildx ls
   - docker buildx build -t xiaodi93/ant-design-admin:latest --platform=linux/arm64 . --push
 

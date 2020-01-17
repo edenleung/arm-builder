@@ -15,4 +15,3 @@ RUN apk upgrade --update \
     && rm -rf /var/cache/apk/*
 
 COPY ./ /usr/share/nginx/html/tant/admin
-RUN chmod -R 777 /usr/share/nginx/html/tant/admin/runtime
