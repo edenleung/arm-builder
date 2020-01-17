@@ -33,8 +33,7 @@ before_deploy:
   - docker buildx create --use --name mybuilder
   - cp .env.example .env
   - docker buildx ls
-  - docker buildx build -t xiaodi93/ant-design:latest --platform=linux/amd64 . --push
-  - docker buildx build -t xiaodi93/ant-design:arm64 --platform=linux/arm64 . --push
+  - docker buildx build -t xiaodi93/ant-design-admin:latest --platform=linux/arm64 . --push
 
 deploy:
   provider: releases
