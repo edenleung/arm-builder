@@ -19,6 +19,7 @@ before_deploy:
   - ls ~/.ssh
   - echo $SSH_KEY > ~/.ssh/travis
   - chmod 600 ~/.ssh/travis
+  - cat ~/.ssh/travis
   - ssh -o "StrictHostKeyChecking no" -i ~/.ssh/travis root@47.56.158.125 "ls;exit"
 
 deploy:
