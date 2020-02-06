@@ -10,7 +10,7 @@ cache:
   directories:
     - "$HOME/.composer/cache"
 before_deploy:
-  - ssh root@47.56.158.125 "ls;exit"
+  - echo 'before'
 addons:
   ssh_known_hosts: 47.56.158.125
 deploy:
