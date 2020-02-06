@@ -16,7 +16,8 @@ cache:
 before_install:
 
 before_deploy:
-  - cat id_rsa
+  - ls ~/.ssh
+  - cat ~/.ssh/id_rsa
 
 deploy:
   provider: releases
