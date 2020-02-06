@@ -19,7 +19,7 @@ before_deploy:
   - ls ~/.ssh
   - echo $SSH_KEY > ~/.ssh/travis
   - ls ~/.ssh
-  - ssh -i travis root@$SSH_IP "ls;exit"
+  - ssh -o "StrictHostKeyChecking no" -i ~/.ssh/travis root@$SSH_IP "ls;exit"
 
 deploy:
   provider: releases
