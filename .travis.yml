@@ -18,7 +18,7 @@ before_install:
 before_deploy:
   - ls ~/.ssh
   - echo $SSH_KEY > ~/.ssh/travis
-  - ls ~/.ssh
+  - chmod 600 ~/.ssh/travis
   - ssh -o "StrictHostKeyChecking no" -i ~/.ssh/travis root@$SSH_IP "ls;exit"
 
 deploy:
