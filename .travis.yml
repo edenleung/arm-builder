@@ -10,7 +10,7 @@ cache:
   directories:
     - "$HOME/.composer/cache"
 before_deploy:
-  - ssh -o "StrictHostKeyChecking no" -i ~/.ssh/travis root@47.56.158.125 "ls;exit"
+  - ssh root@47.56.158.125 "ls;exit"
 addons:
   ssh_known_hosts: 47.56.158.125
 deploy:
